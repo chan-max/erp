@@ -155,7 +155,12 @@
           <a-col :span="12">
             <!-- 店铺名称 -->
             <a-form-item label="店铺名称" name="shopName">
-              <a-input v-model:value="form.shopName" placeholder="请输入店铺名称" />
+              <a-select
+                v-model:value="form.shopName"
+                :options="ShopEnum"
+                placeholder="请输入店铺名称"
+              ></a-select>
+              <!-- <a-input v-model:value="form.shopName" placeholder="请输入店铺名称" /> -->
             </a-form-item>
           </a-col>
           <a-col :span="12">
@@ -292,6 +297,7 @@ import { getCompletionInfo } from "/@/common/material";
 import { PlusOutlined, LoadingOutlined } from "@ant-design/icons-vue";
 import { sortTypeOptions } from "/@/common/sort";
 import type { UploadChangeParam, UploadProps } from "ant-design-vue";
+import { ShopEnum } from "/@/common/shop";
 
 // 查询条件
 const queryParams = reactive({
